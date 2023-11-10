@@ -2,7 +2,9 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import sys 
 
+print("Installation Path :", sys.executable)
 def open_image():
     global image_object
     filepath = filedialog.askopenfilename(title="Open Image", filetypes=[("Image Files", "*.jpg *.png *.jpeg")])
@@ -22,9 +24,9 @@ def update_table():
     table_value.set(predicted_roll_no)
 
 root = tk.Tk()
-root.title("Prototype Demo")
+root.title("Image Recognition App")
 
-header_label = tk.Label(root, text="Prototype Demonstration App", font=("Helvetica", 16, "bold"))
+header_label = tk.Label(root, text="Face Recognizer", font=("Helvetica", 16, "bold"))
 header_label.pack(pady=10)
 
 image_label = tk.Label(root, image=None)
@@ -47,11 +49,11 @@ open_button.pack(pady=10)
 table_frame = ttk.Frame(root)
 table_frame.pack(pady=10)
 
-left_cell_label = ttk.Label(table_frame, text="Predicted Roll No:", font=("Helvetica", 10, "bold"))
+left_cell_label = ttk.Label(table_frame, text="Predicted Roll No:", font=("Helvetica", 20, "bold"))
 left_cell_label.grid(row=0, column=0, padx=5, pady=5, sticky=tk.W)
 
 table_value = tk.StringVar()
-right_cell_label = ttk.Label(table_frame, textvariable=table_value, font=("Helvetica", 10, "bold"))
+right_cell_label = ttk.Label(table_frame, textvariable=table_value, font=("Helvetica", 20, "bold"))
 right_cell_label.grid(row=0, column=1, padx=5, pady=5, sticky=tk.W)
 
 
