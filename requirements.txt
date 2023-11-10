@@ -1,1 +1,3 @@
 Pillow
+mtcnn
+opencv-python
